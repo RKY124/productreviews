@@ -6,5 +6,7 @@ const productController = require('../controllers/productController.js');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+router.get('/products/edit/:id', productController.renderEditForm);
 router.get('/products/profile/:id', productController.renderProfile );
+router.post('/products/edit/:id', productController.updateProduct);
 module.exports = router;
